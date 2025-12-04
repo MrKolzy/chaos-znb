@@ -9,10 +9,12 @@ class Window:
         if self.__handle == 0:
             raise Exception("The window could not be found")
 
+        self.__bring_to_foreground()
+
     def __get_handle(self) -> int:
         return win32gui.FindWindow(None, self.__title)
 
-    def bring_to_foreground(self) -> None:
+    def __bring_to_foreground(self) -> None:
         if win32gui.GetForegroundWindow() != self.__handle:
             win32gui.ShowWindow(self.__handle, win32con.SW_RESTORE)
             win32gui.SetForegroundWindow(self.__handle)

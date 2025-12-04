@@ -2,8 +2,7 @@ from window import Window
 
 def main() -> int:
     try:
-        window = Window("Chaos Zero Nightmare")
-        window.bring_to_foreground()
+        Window("Chaos Zero Nightmare")
     except Exception as exception:
         print(f"[Exception]: {exception}")
 
